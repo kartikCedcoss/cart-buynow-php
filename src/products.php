@@ -95,11 +95,12 @@ include("config.php");
  
 foreach($_SESSION['buynow'] as $key => $val ){
 	 
-if( $_SESSION['buynow'][$key]['id']== $val['id']){
+// if( $_SESSION['buynow'][$key]['id']== $val['id']){
 
-$_SESSION['buynow'][$key]['quantity'] = $val['quantity'];
-	break;
-	}
+// $_SESSION['buynow'][$key]['quantity'] = $val['quantity'];
+// 	break;
+// 	}
+
 
  	$html3 = "<form method='POST' action='addToCart.php'> <tr><td>" . $val['name'] . "</td><td><img  src='images/" . $val['image'] . "' width='60px' height='60px' >
    </td><td>$" . $val['price'] . "</td><td><input class='edinp' name='quantity' type='number' onchange='form.submit()' value ='" . $val['quantity'] . "'>

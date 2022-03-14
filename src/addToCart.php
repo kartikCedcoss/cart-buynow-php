@@ -14,6 +14,9 @@ $_SESSION['bcheck'] = $_POST['buyNow'];
         $_SESSION['buynow'] =array();
     }
 
+
+    print_r(($_POST));
+
 foreach ($_POST as $k => $v)
 {
     $action = $k;
@@ -103,15 +106,17 @@ function buynow(){
   
    
    foreach($_SESSION['product']  as $key=> $val)
+
     {
+        echo ("helo");
         if($_POST['buyNow'] == $val['id'])
         {
             $bid = $val['id'];
             $bname = $val['name'];
             $bimage =$val['image'];
             $bprice =$val ['price'];
-            $bdata = array(array("id" => $bid ,"name"=> $bname , "image"=> $bimage ,"price" => $bprice, "quantity" => "1"));
-           $_SESSION['buynow'] = $bdata;
+            $bdata = array("id" => $bid ,"name"=> $bname , "image"=> $bimage ,"price" => $bprice, "quantity" => "1");
+           array_push($_SESSION['buynow'] , $bdata);
            break;
         } 
        
